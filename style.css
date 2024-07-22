@@ -52,3 +52,49 @@
   position: absolute;
   color: #000;
 }
+.app-text{
+  width: 50%;
+  float: left;
+}
+.app-text h1{
+  font-size: 43px;
+  width: 640px;
+  position: relative;
+  margin-left: 40px;
+}
+.app-text p{
+  width: 650px;
+  font-size: 15px;
+  margin: 30px 0 30px  40px;
+  line-height: 25px;
+  color: #000;
+}
+.app-picture{
+  width: 50%;
+  float: right;
+}
+.app-picture img{
+  width: 100%;
+  margin-top: -20px;
+  padding-left: 50px;
+}
+a:link {
+  color:#EDAF50;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color:#EDAF50;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: #431912;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:active {
+  color:#EDAF50;
+  background-color: transparent;
+  text-decoration: none;
+}
