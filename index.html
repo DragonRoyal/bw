@@ -111,3 +111,42 @@ h2 .supreme {
   length: 100%;
   margin: 2rem auto;
 }
+
+.serial {
+  color: white
+}
+.accordion-item {
+  height: 100%;
+  background-color: #1b1930;
+  color: #111;
+  margin: 2rem 0;
+  height: auto;
+  border-radius: none;
+  box-shadow: 0 5px 15px #4169e1;
+}
+.accordion-item-header {
+  margin-left: 20px;
+  color: white;
+  padding: 1.6rem;
+  min-height: 3.5rem;
+  line-height: 1.25rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+.accordion-item-header::after {
+  content: "\002B";
+  font-size: 2rem;
+  position: absolute;
+  right: 1rem;
+}
+.accordion-item-header.active::after {
+  content: "\2212";
+}
+.accordion-item-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
