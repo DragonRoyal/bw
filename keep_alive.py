@@ -87,3 +87,39 @@ def wanted():
     else:
       return page_not_found(404)
 
+
+@app.route('/greyscale',methods=['GET'])
+def grey_scale():
+    if 'avatar' in flask.request.args:
+        Lavatar = str(flask.request.args['avatar'])
+        response = requests.get(Lavatar)
+        image = Image.open(BytesIO(response.content))
+        pfp = image.convert("L")
+        pfp.save("greyscale.png")
+        return send_file("greyscale.png", mimetype='image/png')
+        #pfp = pfp.open('profile.png')
+
+@app.route('/drake',methods=['GET'])
+def drake():
+  my_image = Image.open("drake.png")
+
+@app.route('/dog',methods=['GET'])
+def dogs():
+  imgList= os.listdir("dogs")
+  dog = random.choice(imgList)
+  print(dog)
+  return send_file(f"dogs/{dog}")
+
+@app.route('/cat',methods=['GET'])
+def cats():
+  imgList= os.listdir("cats")  
+  cat = random.choice(imgList)
+  print(cat)
+  return send_file(f"cats/{cat}")
+
+@app.route('/punch',methods=['GET'])
+def punchs():
+  imgList= os.listdir("punchs")  
+  punch = random.choice(imgList)
+  return send_file(f"punchs/{punch}",mimetype='image/gif')
+   
