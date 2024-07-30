@@ -123,3 +123,46 @@ def punchs():
   punch = random.choice(imgList)
   return send_file(f"punchs/{punch}",mimetype='image/gif')
    
+   
+@app.route('/rip',methods=['GET'])
+def restip():
+  print("R.I.P")
+  return send_file("image/rip.png")
+
+
+@app.route('/support')
+def support():
+  return render_template("support.html")
+
+@app.route('/api')
+def api():
+  return render_template("api.html")
+
+@app.route('/doc')
+def doc():
+  return render_template("doc.html")
+
+@app.route('/projects')
+def projects():
+  return render_template("projects.html")
+
+@app.route('/fact')
+def fact():
+  return random.choice(db["facts"])
+
+@app.route('/8ball')
+def get8ballresponse():
+  question = request.args.get('question')
+  return jsonify({
+    "question" : question,
+    "response" : random.choice(responses)
+  })
+
+@app.route('/admin')
+def admin_panel():
+  if str(request.args.get('password')) == os.getenv('password'):
+    return render_template('admin.html')
+  else:
+    return redirect('/')
+
+#app.run(host="0.0.0.0",port=80,)
